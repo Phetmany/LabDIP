@@ -11,6 +11,20 @@ import java.text.NumberFormat;
 public class Startup {
 
     public static void main(String[] args) {
+        
+        HourlyEmployee emp1 = new HourlyEmployee(10, 900);
+        SalariedEmployee emp2 = new SalariedEmployee(3333333, 1250);
+        SalariedEmployee emp3 = new SalariedEmployee(90000, 0);
+        
+        HRService service = new HRService();
+        NumberFormat nf = NumberFormat.getCurrencyInstance();
+        
+        System.out.println("Employee 1 annual compensation: "
+                + nf.format(service.getAnnualCompensationForEmployee(emp1)));
+        System.out.println("Employee 2 annual compensation: "
+                + nf.format(service.getAnnualCompensationForEmployee(emp2)));
+        System.out.println("Employee 3 annual compensation: "
+                +            nf.format(service.getAnnualCompensationForEmployee(emp3)));
         /*
          * We'll just use this class for testing our ccde.
          * We'll provide input and get some output...

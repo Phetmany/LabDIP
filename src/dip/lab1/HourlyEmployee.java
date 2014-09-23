@@ -13,8 +13,8 @@ public class HourlyEmployee implements Employee {
     /** default constructor. Is this the best way to go? */
 //    public HourlyEmployee() {}
     public HourlyEmployee(double hourlyRate, double totalHrsForYear) {
-        this.hourlyRate = hourlyRate;
-        this.totalHrsForYear = totalHrsForYear;
+        setHourlyRate(hourlyRate);
+        setTotalHrsForYear(totalHrsForYear);
     }
     
      @Override
@@ -27,9 +27,8 @@ public class HourlyEmployee implements Employee {
         return hourlyRate;
     }
 
-    public void setHourlyRate(double hourlyRate) {
+    public final void setHourlyRate(double hourlyRate) {
         if (hourlyRate < 0 || hourlyRate > 300) {
-            System.out.println("Invalid hourly rate.");
             throw new IllegalArgumentException();
         }
         this.hourlyRate = hourlyRate;
@@ -39,9 +38,8 @@ public class HourlyEmployee implements Employee {
         return totalHrsForYear;
     }
 
-    public void setTotalHrsForYear(double totalHrsForYear) {
+    public final void setTotalHrsForYear(double totalHrsForYear) {
         if (totalHrsForYear < 0 || totalHrsForYear > 5500) {
-            System.out.println("Invalid total hours for year");
             throw new IllegalArgumentException();
         }
         this.totalHrsForYear = totalHrsForYear;

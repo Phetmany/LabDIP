@@ -14,8 +14,8 @@ public class SalariedEmployee implements Employee {
     /** default constructor. Is this the best way to go? */
 //    public SalariedEmployee() {}
     public SalariedEmployee(double annualSalary, double annualBonus) {
-        this.annualSalary = annualSalary;
-        this.annualBonus = annualBonus;
+        setAnnualSalary(annualSalary);
+        setAnnualBonus(annualBonus);
     }
     
 
@@ -38,6 +38,9 @@ public class SalariedEmployee implements Employee {
         return annualSalary;
     }
     public void setAnnualSalary(double annualSalary) {
+        if (annualSalary < 0 || annualSalary > 999999) {
+            throw new IllegalArgumentException();
+        }
         this.annualSalary = annualSalary;
     }
 
@@ -46,6 +49,9 @@ public class SalariedEmployee implements Employee {
     }
 
     public void setAnnualBonus(double annualBonus) {
+        if (annualBonus < 0 || annualBonus > 999999) {
+            throw new IllegalArgumentException();
+        }
         this.annualBonus = annualBonus;
     }
     
