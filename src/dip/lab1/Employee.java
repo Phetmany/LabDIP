@@ -8,6 +8,11 @@ package dip.lab1;
  * @author your name goes here
  */
 public interface Employee {
+    
+    public abstract double getAnnualWages();
+    
+    
+    
     // You gotta question if these are appropriate for ALL employees?
 //    private double hourlyRate;
 //    private double totalHrsForYear;
@@ -21,7 +26,7 @@ public interface Employee {
      * @return annual wages for hourly workers using the formula
      * annualWages = hourlyRate * totalHrsForYear
      */
-//    public double getAnnualWages() {
+//    public abstract double getAnnualWages();
 //        return hourlyRate * totalHrsForYear;
 //    }
 

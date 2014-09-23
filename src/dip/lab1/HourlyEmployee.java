@@ -9,9 +9,45 @@ package dip.lab1;
 public class HourlyEmployee implements Employee {
     private double hourlyRate;
     private double totalHrsForYear;
-    
+
     /** default constructor. Is this the best way to go? */
 //    public HourlyEmployee() {}
+    public HourlyEmployee(double hourlyRate, double totalHrsForYear) {
+        this.hourlyRate = hourlyRate;
+        this.totalHrsForYear = totalHrsForYear;
+    }
+    
+     @Override
+    public double getAnnualWages() {
+        return hourlyRate * totalHrsForYear;
+    }
+
+    //setters and getters
+    public double getHourlyRate() {
+        return hourlyRate;
+    }
+
+    public void setHourlyRate(double hourlyRate) {
+        if (hourlyRate < 0 || hourlyRate > 300) {
+            System.out.println("Invalid hourly rate.");
+            throw new IllegalArgumentException();
+        }
+        this.hourlyRate = hourlyRate;
+    }
+
+    public double getTotalHrsForYear() {
+        return totalHrsForYear;
+    }
+
+    public void setTotalHrsForYear(double totalHrsForYear) {
+        if (totalHrsForYear < 0 || totalHrsForYear > 5500) {
+            System.out.println("Invalid total hours for year");
+            throw new IllegalArgumentException();
+        }
+        this.totalHrsForYear = totalHrsForYear;
+    }
+    
+
     /**
      * Convenience constructor. Is this the best way to go?
      * @param hourlyRate - the rate per hour that the employee is paid
@@ -21,11 +57,8 @@ public class HourlyEmployee implements Employee {
 //        setHourlyRate(hourlyRate);
 //        setTotalHrsForYear(totalHrsForYear);
 //    }
-    public HourlyEmployee(double hourlyRate, double totalHrsForYear) {
-        this.hourlyRate = hourlyRate;
-        this.totalHrsForYear = totalHrsForYear;
-    }
-    
+
+   
     
 
 }
