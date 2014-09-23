@@ -9,17 +9,12 @@ package dip.lab2;
  * @author your name goes here
  */
 public class FoodServiceTipCalculator implements TipCalculator {
-    private static final double MIN_BILL = 0.00; 
-    private static final String BILL_ENTRY_ERR =
-            "Error: bill must be greater than or equal to " + MIN_BILL;
+    
+    private double bill;
     private static final double GOOD_RATE = 0.20;
     private static final double FAIR_RATE = 0.15;
     private static final double POOR_RATE = 0.10;
     
-    private double bill;
-//    public enum ServiceQuality {
-//        GOOD, FAIR, POOR
-//    }
     private ServiceQuality serviceQuality;
 
     public FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
@@ -45,15 +40,15 @@ public class FoodServiceTipCalculator implements TipCalculator {
 
         return tip;
     }
-
-    public final void setBill(double billAmt) {
-        if(billAmt < MIN_BILL) {
-            throw new IllegalArgumentException(BILL_ENTRY_ERR);
+    
+    public final void setBill(double bill) {
+        if(bill < 5) {
+            throw new IllegalArgumentException("Bill must be greater than 5");
         }
-        bill = billAmt;
+        this.bill = bill;
     }
-
-    public final void setServiceRating(ServiceQuality q) {
+    
+        public final void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
     }
@@ -61,5 +56,24 @@ public class FoodServiceTipCalculator implements TipCalculator {
     public ServiceQuality getServiceQuality() {
         return serviceQuality;
     }
+
+//    public final void setBill(double billAmt) {
+//        if(billAmt < MIN_BILL) {
+//            throw new IllegalArgumentException(BILL_ENTRY_ERR);
+//        }
+//        bill = billAmt;
+//    }
+
+
+
+//    private static final double MIN_BILL = 0.00; 
+//    private static final String BILL_ENTRY_ERR =
+//            "Error: bill must be greater than or equal to " + MIN_BILL;
+
+
+//    public enum ServiceQuality {
+//        GOOD, FAIR, POOR
+//    }
+    
 
 }

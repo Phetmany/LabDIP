@@ -24,8 +24,8 @@ public class Startup {
 //    };
  
     public static void main(String[] args) {
-//        TipManager manager = new TipManager(new FoodServiceTipCalculator(ServiceQuality.GOOD, 100.00));
-        TipManager manager = new TipManager(new BaggageServiceTipCalculator(ServiceQuality.POOR, 10));
+        TipManager manager = new TipManager(new FoodServiceTipCalculator(ServiceQuality.GOOD, 4.00));
+//        TipManager manager = new TipManager(new BaggageServiceTipCalculator(ServiceQuality.FAIR, 10));
         manager.getTips();
     }
 

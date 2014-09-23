@@ -9,20 +9,13 @@ package dip.lab2;
  * @author your name goes here
  */
 public class BaggageServiceTipCalculator implements TipCalculator {
-    private static final double MIN_BILL = 0.00;
-    private static final double MAX_BILL = 100.00;
-    private static final String BILL_ENTRY_ERR =
-            "Error: bill must be between " + MIN_BILL + " and "
-            + MAX_BILL;
     private static final double GOOD_RATE = 0.20;
     private static final double FAIR_RATE = 0.15;
     private static final double POOR_RATE = 0.10;
-
+    
     private double baseTipPerBag;
     private int bagCount;
-//    public enum ServiceQuality {
-//        GOOD, FAIR, POOR
-//    }
+    
     private ServiceQuality serviceQuality;
 
     public BaggageServiceTipCalculator(ServiceQuality q, int bags) {
@@ -50,25 +43,7 @@ public class BaggageServiceTipCalculator implements TipCalculator {
 
         return tip;
     }
-
-//    public double getTipForBaggeHandler() {
-//        double tip = 0.00; // always initialize local variables
-//
-//        switch(serviceQuality) {
-//            case GOOD:
-//                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
-//                break;
-//            case FAIR:
-//                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
-//                break;
-//            case POOR:
-//                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
-//                break;
-//        }
-//
-//        return tip;
-//    }
-
+    
     public final void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
@@ -101,6 +76,39 @@ public class BaggageServiceTipCalculator implements TipCalculator {
         }
         this.baseTipPerBag = baseTipPerBag;
     }
+
+//    public double getTipForBaggeHandler() {
+//        double tip = 0.00; // always initialize local variables
+//
+//        switch(serviceQuality) {
+//            case GOOD:
+//                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+//                break;
+//            case FAIR:
+//                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+//                break;
+//            case POOR:
+//                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+//                break;
+//        }
+//
+//        return tip;
+//    }
+
+    
+    
+//    private static final double MIN_BILL = 0.00;
+//    private static final double MAX_BILL = 100.00;
+//    private static final String BILL_ENTRY_ERR =
+//            "Error: bill must be between " + MIN_BILL + " and "
+//            + MAX_BILL;
+
+
+    
+//    public enum ServiceQuality {
+//        GOOD, FAIR, POOR
+//    }
+    
 
 
 
